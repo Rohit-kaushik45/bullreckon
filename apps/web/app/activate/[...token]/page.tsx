@@ -6,15 +6,15 @@ import { useToast } from "@/hooks/use-toast";
 import { API_CONFIG } from "@/config";
 
 export default function ActivateEmail() {
+  
   const router = useRouter();
   const params = useParams();
   const token = Array.isArray(params.token)
     ? params.token.join("")
     : params.token;
   const [loading, setLoading] = useState(true);
-
   const { toast } = useToast();
-
+  
   useEffect(() => {
     if (token) {
       async function verifyToken() {
