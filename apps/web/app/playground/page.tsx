@@ -41,6 +41,7 @@ export default function CodePlayground() {
     );
     if (langData) {
       setCode(langData.defaultCode);
+      
     }
   };
 
@@ -85,9 +86,11 @@ export default function CodePlayground() {
           }
         }, 60000);
       } else {
+        
         if (!apiKey) {
           setOutput("Error: API key required for live trading mode.");
           return;
+          
         }
         // Simulate live trading
         await new Promise((resolve) => setTimeout(resolve, 2000));
